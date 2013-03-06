@@ -1,0 +1,10 @@
+<%= simple_form_for(task, :url => list_tasks_path(task.list), :remote => true, :html => {:id => 'new-task-form', :class => 'form-horizontal'}) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :title, :as => :text, :input_html => {:class => 'task-title expandable_text', :rows => 1, :cols => 100} %>
+    <%= f.input :due_date, :as => :string, :input_html => {:class => 'date-time-picker-date'} %>
+    <%= f.input :priority, :collection => Task::PRIORITIES %>
+
+    <div class="controls">
+      <%= f.button :submit, :class => 'btn btn-primary', :disable_with =>  'Saving..' %>
+    </div>
+<% end %>

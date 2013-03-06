@@ -1,0 +1,4 @@
+$('#task-lists').html('<%= j render('lists/list') %>');
+<% if @trigger_click %>
+    $('#task-lists').find('li > a').first().trigger('click');
+<% end %>

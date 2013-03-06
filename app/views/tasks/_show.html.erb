@@ -1,0 +1,20 @@
+<li id="task-<%= task.id %>">
+  <%= simple_form_for task, :url => list_task_path(task.list, task), :remote => true, :html => {:class => 'form-horizontal'} do |f| %>
+      <div class="task-status">
+        <%= f.check_box :completed, :wrapper => :only_input, :class => 'task-status-checkbox' %>
+      </div>
+      <div class="task-detail">
+        <p class="<%= task.completed? ? 'crossed' : '' %>"><%= task.title %></p>
+        <% if task.priority %>
+            <span class="label <%= priority_class(task) %>"><%= task.priority_label %></span>
+        <% end %>
+        <% if  task.due_date %>
+            <span class="label"><%= l task.due_date %></span>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="task-actions">
+    <%= link_to 'Edit', edit_list_task_path(task.list, task), :remote => true %>  |
+    <%= link_to 'Delete', list_task_path(task.list, task), :remote => true, :confirm => 'Are you sure you want to delete this task?', :method => :delete %>
+  </div>
+</li>

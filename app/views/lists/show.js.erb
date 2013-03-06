@@ -1,0 +1,4 @@
+$('#tasks-container').html('<%= j render('lists/show') %>');
+TODO_IT.UI.trigger_auto_resize($('#tasks-container'));
+$('.list-title').focus();
+$('.list-title')[0].setSelectionRange($('.list-title')[0].value.length,$('.list-title')[0].value.length);

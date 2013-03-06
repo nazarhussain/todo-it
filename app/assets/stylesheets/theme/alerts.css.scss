@@ -1,0 +1,10 @@
+@import "bootstrap/_mixins.scss";
+.alert{
+  position: absolute;
+  top: 0;
+  width: 50%;
+  left: 25%;
+  z-index: 9999;
+  @include border-top-radius(0px);
+  @include border-bottom-radius(2px);
+}

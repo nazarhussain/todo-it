@@ -1,0 +1,2 @@
+$('#task-lists ul').append('<li><%= link_to @list.title, list_path(@list), :remote => true, :id => "list-#{@list.id}-anchor" %></li>');
+$('#task-lists').find('li > a').last().trigger('click');

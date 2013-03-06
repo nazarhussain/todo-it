@@ -1,0 +1,15 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Todo It</a>
+
+      <% if user_signed_in? %>
+          <ul class="nav pull-right">
+            <li><p class="navbar-text">Welcome: <strong><%= current_user.name %></strong></p></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

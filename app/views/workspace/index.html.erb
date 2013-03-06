@@ -1,0 +1,21 @@
+<div id="workspace" class="row">
+  <div id="lists-container" class="span3">
+    <div>
+      <strong>Task Lists</strong>
+      <span class="pull-right">
+        <%= link_to '+', new_list_path, :class => 'btn btn-mini btn-info', :remote => true %>
+      </span>
+    </div>
+    <div class="search-form">
+      <%= simple_form_for :search, :url => lists_path, :remote => true, :html => {:method => 'GET'} do |f| %>
+          <%= f.text_field :title_like, :class => 'search-query', :placeholder => 'Search' %>
+      <% end %>
+    </div>
+    <div id="task-lists">
+
+    </div>
+  </div>
+  <div id="tasks-container" class="span9">
+
+  </div>
+</div>

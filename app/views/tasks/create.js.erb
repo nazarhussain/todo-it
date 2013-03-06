@@ -1,0 +1,2 @@
+$('ul#tasks').append('<%= j render(:partial => 'tasks/show', :locals => {:task => @task}) %>');
+$('#new-task-form')[0].reset();

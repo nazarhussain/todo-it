@@ -1,0 +1,13 @@
+<li id="task-<%= task.id %>">
+  <%= simple_form_for task, :url => list_task_path(task.list, task), :remote => true, :html => {:class => 'form-horizontal'} do |f| %>
+
+      <%= f.input :title, :as => :text, :input_html => {:class => 'task-title expandable_text', :rows => 1} %>
+      <%= f.input :due_date, :as => :string, :input_html => {:class => 'date-time-picker-date'} %>
+      <%= f.input :priority, :collection => Task::PRIORITIES %>
+      <%= f.input :completed %>
+      <div class="controls">
+        <%= f.submit 'Update', :class => 'btn btn-primary' %>  or
+        <%= link_to 'Cancel', list_task_path(task.list, task), :remote => true %>
+      </div>
+  <% end %>
+</li>

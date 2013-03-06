@@ -1,0 +1,5 @@
+<ul class="nav nav-list">
+  <% @lists.each do |l| %>
+      <li><%= link_to l.title, list_path(l), :remote => true, :id => "list-#{l.id}-anchor" %></li>
+  <% end %>
+</ul>

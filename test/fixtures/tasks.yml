@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  list: 
+  due_date: 2013-03-06
+  priority: 1
+
+two:
+  title: MyString
+  list: 
+  due_date: 2013-03-06
+  priority: 1

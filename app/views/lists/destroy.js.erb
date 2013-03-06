@@ -1,0 +1,2 @@
+$('#task-lists').find("#list-<%= @list.id %>-anchor").parents('li').remove();
+$('#task-lists').find('li > a').first().trigger('click');

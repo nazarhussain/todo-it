@@ -1,0 +1,21 @@
+<h1>Listing api_tasks</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @api_tasks.each do |api_task| %>
+  <tr>
+    <td><%= link_to 'Show', api_task %></td>
+    <td><%= link_to 'Edit', edit_api_task_path(api_task) %></td>
+    <td><%= link_to 'Destroy', api_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_api_task_path %>

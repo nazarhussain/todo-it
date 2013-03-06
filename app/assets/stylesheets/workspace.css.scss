@@ -1,0 +1,115 @@
+// Place all the styles related to the Workspace controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap/mixins";
+
+body.workspace.workspace-index {
+
+  @mixin transparent-box {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    resize: none;
+    width: 80%;
+    @include box-shadow(none);
+  }
+  #lists-container {
+    background: #F6F6F6;
+    min-height: 300px;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    margin-top: -15px;
+    @include border-bottom-radius(10px);
+    @include box-sizing(border-box);
+    @include box-shadow(0 -1px 10px rgba(0, 0, 0, 0.1));
+
+    .search-form {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      input {
+        width: 100%;
+        height: 30px;
+        @include box-sizing(border-box);
+        @include border-radius(5px);
+      }
+    }
+  }
+
+  #tasks-container {
+    #list-detail {
+
+      textarea {
+        @include transparent-box;
+        width: 100%;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: bold;
+      }
+    }
+    #action-bar {
+      border-top: 1px solid #d4d4d4;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    #new-task-container {
+      margin-top: 20px;
+      padding: 10px;
+      background: #F6F6F6;
+      border-top: 1px solid #d4d4d4;
+
+      input.task-title {
+        width: 80%;
+      }
+    }
+    textarea.task-title {
+      width: 80%;
+    }
+    ul#tasks {
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      list-style: none;
+      li {
+        list-style: none;
+        padding: 10px;
+        position: relative;
+        border: 1px dotted white;
+        .task-status {
+          width: 25px;
+          top: 5px;
+          left: 5px;
+          position: absolute;
+        }
+        .task-detail {
+          padding-left: 22px;
+          p.crossed {
+            text-decoration: line-through;
+          }
+        }
+        form {
+          padding: 0;
+          margin: 0;
+        }
+        .task-actions {
+          display: none;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+        &:hover {
+          border: 1px dashed #d4d4d4;
+          .task-actions {
+            display: block;
+          }
+        }
+      }
+      li:nth-child(2n+1) {
+        background: #F8F8F8;
+      }
+    }
+  }
+}

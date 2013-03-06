@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- [if IE 7] <html class="ie7" lang="en"> -->
+<!-- [if IE 8] <html class="ie8" lang="en"> -->
+<!-- [if IE 9] <html class="ie9" lang="en"> -->
+<!-- [if gt IE 9] -->
+<html>
+<!-- [endif] -->
+<head>
+  <title>TodoIt</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= "#{controller_name} #{controller_name}-#{action_name}" %>">
+
+<%= render 'layouts/alerts' %>
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <div class="span4 offset4">
+    <%= yield %>
+  </div>
+</div>
+
+</body>
+</html>
